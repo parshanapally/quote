@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { fetchQuotes } from "./services/fetchQuotes";
+import Motivational from "./components/Motivational/Motivational";
 
 class App extends Component {
   state = {
@@ -16,7 +17,11 @@ class App extends Component {
     });
   }
   render() {
-    return <div>Hello</div>;
+    return (
+      <div>
+        <Motivational state={this.state.quotes} />
+      </div>
+    );
   }
 }
 
