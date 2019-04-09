@@ -4,7 +4,9 @@ const Tabs = props => {
   const tabs = [
     { className: "motivationalDiv", text: "Motivational" },
     { className: "humorDiv", text: "Humor" },
-    { className: "positiveDiv", text: "Positive" }
+    { className: "positiveDiv", text: "Positive" },
+    { className: "leadershipDiv", text: "Leadership" }
+
     // { className: "eventsDiv", text: "Events" },
     // { className: "anniversariesDiv", text: "Anniversaries" },
     // { className: "brandysCornerDiv", text: "Brandys Corner" },
