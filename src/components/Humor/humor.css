@@ -1,0 +1,14 @@
+.humorLink {
+  text-decoration: none;
+  color: black;
+  padding: 3px;
+  display: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.humorLink.active {
+  color: var(--black);
+  padding-bottom: 10px;
+  display: block;
+}

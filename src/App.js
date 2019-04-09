@@ -3,6 +3,7 @@ import { fetchQuotes } from "./services/fetchQuotes";
 import Motivational from "./components/Motivational/Motivational";
 import Tabs from "./components/Tabs/Tabs";
 import classNames from "classnames";
+import Humor from "./components/Humor/Humor";
 class App extends Component {
   state = {
     filteredQuotes: [],
@@ -20,10 +21,15 @@ class App extends Component {
   }
 
   handleClick = e => {
-    if (e.target.className === "motivationalDiv")
+    if (e.target.className === "motivationalDiv") {
       this.setState({
         isActive: "motivational"
       });
+    } else if (e.target.className === "humorDiv") {
+      this.setState({
+        isActive: "humor"
+      });
+    }
   };
   render() {
     return (
@@ -32,6 +38,11 @@ class App extends Component {
         <Motivational
           className={classNames("motivationalLink", {
             active: this.state.isActive === "motivational"
+          })}
+        />
+        <Humor
+          className={classNames("humorLink", {
+            active: this.state.isActive === "humor"
           })}
         />
       </div>
