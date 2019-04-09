@@ -1,4 +1,4 @@
-.humorLink {
+.wisdomLink {
   text-decoration: none;
   color: black;
   padding: 3px;
@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-.humorLink.active {
+.wisdomLink.active {
   color: var(--black);
   padding-bottom: 10px;
   display: block;

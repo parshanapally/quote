@@ -6,6 +6,7 @@ import classNames from "classnames";
 import Humor from "./components/Humor/Humor";
 import Positive from "./components/Positive/Positive";
 import Leadership from "./components/Leadership/Leadership";
+import Wisdom from "./components/Wisdom/Wisdom";
 class App extends Component {
   state = {
     filteredQuotes: [],
@@ -39,6 +40,10 @@ class App extends Component {
       this.setState({
         isActive: "leadership"
       });
+    } else if (e.target.className === "wisdomDiv") {
+      this.setState({
+        isActive: "wisdom"
+      });
     }
   };
   render() {
@@ -65,6 +70,12 @@ class App extends Component {
         <Leadership
           className={classNames("leadershipLink", {
             active: this.state.isActive === "leadership"
+          })}
+        />
+
+        <Wisdom
+          className={classNames("wisdomLink", {
+            active: this.state.isActive === "wisdom"
           })}
         />
       </div>

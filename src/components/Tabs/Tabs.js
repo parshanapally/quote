@@ -1,18 +1,13 @@
 import React from "react";
+import "./tabs.css";
 
 const Tabs = props => {
   const tabs = [
     { className: "motivationalDiv", text: "Motivational" },
     { className: "humorDiv", text: "Humor" },
     { className: "positiveDiv", text: "Positive" },
-    { className: "leadershipDiv", text: "Leadership" }
-
-    // { className: "eventsDiv", text: "Events" },
-    // { className: "anniversariesDiv", text: "Anniversaries" },
-    // { className: "brandysCornerDiv", text: "Brandys Corner" },
-    // { className: "placesDiv", text: "Places" },
-    // { className: "hobbiesDiv", text: "Hobbies" },
-    // { className: "booksDiv", text: "Books" }
+    { className: "leadershipDiv", text: "Leadership" },
+    { className: "wisdomDiv", text: "Wisdom" }
   ];
 
   return (
