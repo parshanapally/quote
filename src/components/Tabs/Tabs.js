@@ -2,8 +2,9 @@ import React from "react";
 
 const Tabs = props => {
   const tabs = [
-    { className: "motivationalDiv", text: "Motivational Quotes" },
-    { className: "humorDiv", text: "Humor Quotes" }
+    { className: "motivationalDiv", text: "Motivational" },
+    { className: "humorDiv", text: "Humor" },
+    { className: "positiveDiv", text: "Positive" }
     // { className: "eventsDiv", text: "Events" },
     // { className: "anniversariesDiv", text: "Anniversaries" },
     // { className: "brandysCornerDiv", text: "Brandys Corner" },

@@ -3,7 +3,7 @@ import "./motivational.css";
 const Motivational = props => {
   return (
     <div className={props.className}>
-      <p>Motivational</p>
+      <p>Motivational Quotes</p>
     </div>
   );
 };

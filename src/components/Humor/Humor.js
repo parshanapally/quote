@@ -4,7 +4,7 @@ import "./humor.css";
 const Humor = props => {
   return (
     <div className={props.className}>
-      <p>Humor</p>
+      <p>Humor Quotes</p>
     </div>
   );
 };

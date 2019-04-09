@@ -4,6 +4,7 @@ import Motivational from "./components/Motivational/Motivational";
 import Tabs from "./components/Tabs/Tabs";
 import classNames from "classnames";
 import Humor from "./components/Humor/Humor";
+import Positive from "./components/Positive/Positive";
 class App extends Component {
   state = {
     filteredQuotes: [],
@@ -29,6 +30,10 @@ class App extends Component {
       this.setState({
         isActive: "humor"
       });
+    } else if (e.target.className === "positiveDiv") {
+      this.setState({
+        isActive: "positive"
+      });
     }
   };
   render() {
@@ -43,6 +48,12 @@ class App extends Component {
         <Humor
           className={classNames("humorLink", {
             active: this.state.isActive === "humor"
+          })}
+        />
+
+        <Positive
+          className={classNames("positiveLink", {
+            active: this.state.isActive === "positive"
           })}
         />
       </div>
