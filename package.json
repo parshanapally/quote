@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "chance": "^1.0.18",
+    "classnames": "^2.2.6",
     "code": "^5.2.4",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",

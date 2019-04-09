@@ -56,6 +56,7 @@ describe("Given App", () => {
   it("should contain default state", () => {
     expect(component.state().filteredQuotes).to.equal([]);
     expect(component.state().quotes).to.equal([]);
+    expect(component.state().isActive).to.equal("");
   });
 
   it("should contain <Motivational/>", () => {
