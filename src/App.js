@@ -7,11 +7,12 @@ import Humor from "./components/Humor/Humor";
 import Positive from "./components/Positive/Positive";
 import Leadership from "./components/Leadership/Leadership";
 import Wisdom from "./components/Wisdom/Wisdom";
+import Home from "./components/Home/Home";
 class App extends Component {
   state = {
     filteredQuotes: [],
     quotes: [],
-    isActive: ""
+    isActive: "home"
   };
   componentDidMount() {
     fetchQuotes().then(res => {
@@ -44,6 +45,10 @@ class App extends Component {
       this.setState({
         isActive: "wisdom"
       });
+    } else if (e.target.className === "homeDiv") {
+      this.setState({
+        isActive: "home"
+      });
     }
   };
 
@@ -60,6 +65,12 @@ class App extends Component {
     return (
       <div>
         <Tabs handleFilter={this.handleFilter} handleClick={this.handleClick} />
+
+        <Home
+          className={classNames("homeLink", {
+            active: this.state.isActive === "home"
+          })}
+        />
         <Motivational
           className={classNames("motivationalLink", {
             active: this.state.isActive === "motivational"

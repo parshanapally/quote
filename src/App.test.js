@@ -56,10 +56,22 @@ describe("Given App", () => {
   it("should contain default state", () => {
     expect(component.state().filteredQuotes).to.equal([]);
     expect(component.state().quotes).to.equal([]);
-    expect(component.state().isActive).to.equal("");
+    expect(component.state().isActive).to.equal("home");
   });
 
   describe("Given handleClick", () => {
+    it("should call <Home/> when isActive state is equal to home", () => {
+      const event = {
+        target: {
+          className: "homeDiv"
+        }
+      };
+
+      component.instance().handleClick(event);
+      component.setState({ isActive: "home" });
+
+      expect(component.state().isActive).to.equal("home");
+    });
     it("should call <Motivational/> when isActive state is equal to motivational", () => {
       const event = {
         target: {

@@ -3,6 +3,7 @@ import "./tabs.css";
 
 const Tabs = props => {
   const tabs = [
+    { className: "homeDiv", text: "Home" },
     { className: "motivationalDiv", text: "Motivational" },
     { className: "humorDiv", text: "Humor" },
     { className: "positiveDiv", text: "Positive" },
