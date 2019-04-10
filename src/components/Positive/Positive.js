@@ -1,8 +1,8 @@
 import React from "react";
 import "./positive.css";
+import PropTypes from "prop-types";
 
 const Positive = props => {
-  console.log(props);
   return (
     <div className={props.className}>
       <p>Positive Quotes</p>
@@ -16,6 +16,10 @@ const Positive = props => {
       </div>
     </div>
   );
+};
+
+Positive.protoTypes = {
+  quotes: PropTypes.array.isRequired
 };
 
 export default Positive;
