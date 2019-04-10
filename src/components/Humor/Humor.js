@@ -3,7 +3,6 @@ import "./humor.css";
 import PropTypes from "prop-types";
 
 const Humor = props => {
-  console.log(props);
   return (
     <div className={props.className}>
       <p>Humor Quotes</p>
