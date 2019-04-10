@@ -1,0 +1,13 @@
+.wisdomLink {
+  text-decoration: none;
+  color: black;
+  padding: 3px;
+  display: none;
+  text-align: center;
+}
+
+.wisdomLink.active {
+  color: var(--black);
+  padding-bottom: 10px;
+  display: block;
+}

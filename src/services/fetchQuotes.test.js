@@ -1,5 +1,4 @@
 import sinon from "sinon";
-import { expect } from "code";
 import { fetchQuotes } from "./fetchQuotes";
 import Chance from "chance";
 
