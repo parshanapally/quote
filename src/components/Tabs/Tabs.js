@@ -15,11 +15,7 @@ const Tabs = props => {
     <div className="tab-container">
       {tabs.map(classes => {
         return (
-          <div
-            onChange={props.handleFilter}
-            onClick={props.handleClick}
-            className={classes.className}
-          >
+          <div onClick={props.handleClick} className={classes.className}>
             {classes.text}
           </div>
         );

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { fetchQuotes } from "./services/fetchQuotes";
 import Motivational from "./components/Motivational/Motivational";
 import Tabs from "./components/Tabs/Tabs";
@@ -12,14 +12,15 @@ class App extends Component {
   state = {
     filteredQuotes: [],
     quotes: [],
-    isActive: "home"
+    isActive: "home",
+    doneLoading: false
   };
   componentDidMount() {
     fetchQuotes().then(res => {
-      console.log(res);
+      // console.log(res);
       this.setState({
-        filteredQuotes: res,
-        quotes: res
+        quotes: res,
+        doneLoading: true
       });
     });
   }
@@ -52,53 +53,52 @@ class App extends Component {
     }
   };
 
-  handleFilter = () => {
-    const quotes = this.state.quotes;
-    console.log(quotes);
-
-    quotes.map(quote => {
-      console.log(quote);
-      return quote;
-    });
-  };
   render() {
     return (
       <div>
-        <Tabs handleFilter={this.handleFilter} handleClick={this.handleClick} />
-
-        <Home
-          className={classNames("homeLink", {
-            active: this.state.isActive === "home"
-          })}
-        />
-        <Motivational
-          className={classNames("motivationalLink", {
-            active: this.state.isActive === "motivational"
-          })}
-        />
-        <Humor
-          className={classNames("humorLink", {
-            active: this.state.isActive === "humor"
-          })}
+        <Tabs
+          state={this.state.filteredQuotes}
+          handleClick={this.handleClick}
         />
 
-        <Positive
-          className={classNames("positiveLink", {
-            active: this.state.isActive === "positive"
-          })}
-        />
-
-        <Leadership
-          className={classNames("leadershipLink", {
-            active: this.state.isActive === "leadership"
-          })}
-        />
-
-        <Wisdom
-          className={classNames("wisdomLink", {
-            active: this.state.isActive === "wisdom"
-          })}
-        />
+        {this.state.doneLoading ? (
+          <Fragment>
+            {" "}
+            <Home
+              className={classNames("homeLink", {
+                active: this.state.isActive === "home"
+              })}
+            />
+            <Motivational
+              className={classNames("motivationalLink", {
+                active: this.state.isActive === "motivational"
+              })}
+              quotes={this.state.quotes}
+            />
+            <Humor
+              className={classNames("humorLink", {
+                active: this.state.isActive === "humor"
+              })}
+            />
+            <Positive
+              className={classNames("positiveLink", {
+                active: this.state.isActive === "positive"
+              })}
+            />
+            <Leadership
+              className={classNames("leadershipLink", {
+                active: this.state.isActive === "leadership"
+              })}
+            />
+            <Wisdom
+              className={classNames("wisdomLink", {
+                active: this.state.isActive === "wisdom"
+              })}
+            />
+          </Fragment>
+        ) : (
+          <div />
+        )}
       </div>
     );
   }
