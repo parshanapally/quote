@@ -79,6 +79,7 @@ class App extends Component {
               className={classNames("humorLink", {
                 active: this.state.isActive === "humor"
               })}
+              quotes={this.state.quotes}
             />
             <Positive
               className={classNames("positiveLink", {
