@@ -1,6 +1,6 @@
 import React from "react";
 import { expect } from "code";
-import { shallow } from "enyzme";
+import { shallow } from "enzyme";
 import Motivational from "./Motivational";
 
 describe("Given Motivational", () => {
@@ -21,6 +21,6 @@ describe("Given Motivational", () => {
   }
 
   it("should exsit", () => {
-    expect(component).to.have.length();
+    expect(component).to.have.length(1);
   });
 });

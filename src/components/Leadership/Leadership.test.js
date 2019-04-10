@@ -1,6 +1,6 @@
 import React from "react";
 import { expect } from "code";
-import { shallow } from "enyzme";
+import { shallow } from "enzyme";
 import Leadership from "./Leadership";
 
 describe("Given Motivational", () => {

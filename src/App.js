@@ -46,10 +46,20 @@ class App extends Component {
       });
     }
   };
+
+  handleFilter = () => {
+    const quotes = this.state.quotes;
+    console.log(quotes);
+
+    quotes.map(quote => {
+      console.log(quote);
+      return quote;
+    });
+  };
   render() {
     return (
       <div>
-        <Tabs handleClick={this.handleClick} />
+        <Tabs handleFilter={this.handleFilter} handleClick={this.handleClick} />
         <Motivational
           className={classNames("motivationalLink", {
             active: this.state.isActive === "motivational"

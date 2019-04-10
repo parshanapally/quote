@@ -1,6 +1,6 @@
-import React from "./node_modules/react";
-import { expect } from "./node_modules/code";
-import { shallow } from "./node_modules/enyzme";
+import React from "react";
+import { expect } from "code";
+import { shallow } from "enzyme";
 import Positive from "./Positive";
 
 describe("Given Motivational", () => {

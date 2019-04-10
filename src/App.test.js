@@ -59,8 +59,95 @@ describe("Given App", () => {
     expect(component.state().isActive).to.equal("");
   });
 
+  describe("Given handleClick", () => {
+    it("should call <Motivational/> when isActive state is equal to motivational", () => {
+      const event = {
+        target: {
+          className: "motivationalDiv"
+        }
+      };
+
+      component.instance().handleClick(event);
+      component.setState({ isActive: "motivational" });
+
+      expect(component.state().isActive).to.equal("motivational");
+    });
+
+    it("should call <Humor/> when isActive state is equal to humor", () => {
+      const event = {
+        target: {
+          className: "humorDiv"
+        }
+      };
+
+      component.instance().handleClick(event);
+      component.setState({ isActive: "humor" });
+
+      expect(component.state().isActive).to.equal("humor");
+    });
+
+    it("should call <Positive/> when isActive state is equal to positive", () => {
+      const event = {
+        target: {
+          className: "positiveDiv"
+        }
+      };
+
+      component.instance().handleClick(event);
+      component.setState({ isActive: "positive" });
+
+      expect(component.state().isActive).to.equal("positive");
+    });
+
+    it("should call <Leadership/> when isActive state is equal to leadership", () => {
+      const event = {
+        target: {
+          className: "leadershipDiv"
+        }
+      };
+
+      component.instance().handleClick(event);
+      component.setState({ isActive: "leadership" });
+
+      expect(component.state().isActive).to.equal("leadership");
+    });
+
+    it("should call <Wisdom/> when isActive state is equal to wisdom", () => {
+      const event = {
+        target: {
+          className: "wisdomDiv"
+        }
+      };
+
+      component.instance().handleClick(event);
+      component.setState({ isActive: "wisdom" });
+
+      expect(component.state().isActive).to.equal("wisdom");
+    });
+  });
+
   it("should contain <Motivational/>", () => {
     const Motivational = component.find("Motivational");
     expect(Motivational).to.have.length(1);
+  });
+
+  it("should contain <Humor/>", () => {
+    const Humor = component.find("Humor");
+    expect(Humor).to.have.length(1);
+  });
+
+  it("should contain <Positive/>", () => {
+    const Positive = component.find("Positive");
+    expect(Positive).to.have.length(1);
+  });
+
+  it("should contain <Leadership/>", () => {
+    const Leadership = component.find("Leadership");
+    expect(Leadership).to.have.length(1);
+  });
+
+  it("should contain <Wisdom/>", () => {
+    const Wisdom = component.find("Wisdom");
+    expect(Wisdom).to.have.length(1);
   });
 });
