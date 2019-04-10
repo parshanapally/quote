@@ -85,16 +85,19 @@ class App extends Component {
               className={classNames("positiveLink", {
                 active: this.state.isActive === "positive"
               })}
+              quotes={this.state.quotes}
             />
             <Leadership
               className={classNames("leadershipLink", {
                 active: this.state.isActive === "leadership"
               })}
+              quotes={this.state.quotes}
             />
             <Wisdom
               className={classNames("wisdomLink", {
                 active: this.state.isActive === "wisdom"
               })}
+              quotes={this.state.quotes}
             />
           </Fragment>
         ) : (
