@@ -1,23 +1,64 @@
 .motivationalDiv {
   cursor: pointer;
+  padding: 10px;
+  padding-right: 100px;
+  padding-left: 100px;
+  border: 1px solid #091b80;
+  background-color: #1b35cc;
 }
 
 .humorDiv {
   cursor: pointer;
+  padding: 10px;
+  padding-right: 100px;
+  padding-left: 100px;
+  border: 1px solid #091b80;
+  background-color: #1b35cc;
 }
 
 .positiveDiv {
   cursor: pointer;
+  padding: 10px;
+  padding-right: 100px;
+  padding-left: 100px;
+  border: 1px solid #091b80;
+  background-color: #1b35cc;
 }
 
 .leadershipDiv {
   cursor: pointer;
+  padding: 10px;
+  padding-right: 100px;
+  padding-left: 100px;
+  border: 1px solid #091b80;
+  background-color: #1b35cc;
 }
 
 .homeDiv {
   cursor: pointer;
+  padding: 10px;
+  padding-right: 100px;
+  padding-left: 100px;
+  border: 1px solid #091b80;
+  background-color: #1b35cc;
 }
 
 .wisdomDiv {
   cursor: pointer;
+  padding: 10px;
+  padding-right: 100px;
+  padding-left: 100px;
+  border: 1px solid #091b80;
+  background-color: #1b35cc;
+}
+.tab-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.tab-links {
+  padding-top: 150px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }

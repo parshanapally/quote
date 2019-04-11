@@ -50,6 +50,11 @@ describe("Given App", () => {
 
   it("should exist", () => {
     const div = component.find("div");
+    expect(div).to.have.length(2);
+  });
+
+  it("should contain div with classname of container", () => {
+    const div = component.find("div.container");
     expect(div).to.have.length(1);
   });
 
@@ -57,6 +62,7 @@ describe("Given App", () => {
     expect(component.state().filteredQuotes).to.equal([]);
     expect(component.state().quotes).to.equal([]);
     expect(component.state().isActive).to.equal("home");
+    expect(component.state().doneLoading).to.be.false();
   });
 
   describe("Given handleClick", () => {
@@ -136,30 +142,5 @@ describe("Given App", () => {
 
       expect(component.state().isActive).to.equal("wisdom");
     });
-  });
-
-  it("should contain <Motivational/>", () => {
-    const Motivational = component.find("Motivational");
-    expect(Motivational).to.have.length(1);
-  });
-
-  it("should contain <Humor/>", () => {
-    const Humor = component.find("Humor");
-    expect(Humor).to.have.length(1);
-  });
-
-  it("should contain <Positive/>", () => {
-    const Positive = component.find("Positive");
-    expect(Positive).to.have.length(1);
-  });
-
-  it("should contain <Leadership/>", () => {
-    const Leadership = component.find("Leadership");
-    expect(Leadership).to.have.length(1);
-  });
-
-  it("should contain <Wisdom/>", () => {
-    const Wisdom = component.find("Wisdom");
-    expect(Wisdom).to.have.length(1);
   });
 });

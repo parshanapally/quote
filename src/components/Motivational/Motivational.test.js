@@ -20,7 +20,7 @@ describe("Given Motivational", () => {
     return shallow(<Motivational {...props} />);
   }
 
-  it("should exsit", () => {
-    expect(component).to.have.length(1);
+  it("should exist", () => {
+    expect(component.find("div")).to.have.length(1);
   });
 });

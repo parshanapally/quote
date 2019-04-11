@@ -55,11 +55,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Tabs
-          state={this.state.filteredQuotes}
-          handleClick={this.handleClick}
-        />
-
         {this.state.doneLoading ? (
           <Fragment>
             {" "}
@@ -100,8 +95,13 @@ class App extends Component {
             />
           </Fragment>
         ) : (
-          <div />
+          <div className="container" />
         )}
+
+        <Tabs
+          state={this.state.filteredQuotes}
+          handleClick={this.handleClick}
+        />
       </div>
     );
   }

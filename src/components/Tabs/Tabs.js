@@ -13,13 +13,15 @@ const Tabs = props => {
 
   return (
     <div className="tab-container">
-      {tabs.map(classes => {
-        return (
-          <div onClick={props.handleClick} className={classes.className}>
-            {classes.text}
-          </div>
-        );
-      })}
+      <div className="tab-links">
+        {tabs.map(classes => {
+          return (
+            <div onClick={props.handleClick} className={classes.className}>
+              {classes.text}
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
