@@ -65,6 +65,35 @@ describe("Given App", () => {
     expect(component.state().doneLoading).to.be.false();
   });
 
+  describe("Given <Fragment/>", () => {
+    it("should re-render component", () => {
+      component.setState({ doneLoading: true });
+      component.update();
+
+      const Home = component.find("Home");
+      expect(Home).to.have.length(1);
+
+      const Motivational = component.find("Motivational");
+      expect(Motivational).to.have.length(1);
+
+      const Humor = component.find("Humor");
+      expect(Humor).to.have.length(1);
+
+      const Positive = component.find("Positive");
+      expect(Positive).to.have.length(1);
+
+      const Leadership = component.find("Leadership");
+      expect(Leadership).to.have.length(1);
+
+      const Wisdom = component.find("Wisdom");
+      expect(Wisdom).to.have.length(1);
+    });
+  });
+
+  it("should contain <Tabs/>", () => {
+    const Tabs = component.find("Tabs");
+    expect(Tabs).to.have.length(1);
+  });
   describe("Given handleClick", () => {
     it("should call <Home/> when isActive state is equal to home", () => {
       const event = {
