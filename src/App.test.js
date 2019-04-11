@@ -44,7 +44,7 @@ describe("Given App", () => {
     component = renderComponent();
   });
 
-  function renderComponent(props = requiredProps) {
+  function renderComponent(props = requiredProps()) {
     return shallow(<App {...props} />);
   }
 
