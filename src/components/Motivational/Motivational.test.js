@@ -58,4 +58,9 @@ describe("Given Motivational", () => {
   it("should exist", () => {
     expect(component.find("div")).to.have.length(2);
   });
+
+  it("should contain className with quote-container", () => {
+    const quoteContainer = component.find("div.quote-container");
+    expect(quoteContainer).to.have.length(1);
+  });
 });

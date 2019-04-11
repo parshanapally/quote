@@ -1,7 +1,6 @@
 import React from "react";
 import { expect } from "code";
 import { shallow } from "enzyme";
-import Chance from "chance";
 import sinon from "sinon";
 import Tabs from "./Tabs";
 

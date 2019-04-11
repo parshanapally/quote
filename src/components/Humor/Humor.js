@@ -7,7 +7,7 @@ const Humor = props => {
     <div className={props.className}>
       <p>Humor Quotes</p>
 
-      <div>
+      <div className="quote-container">
         {
           props.quotes[1].humor[
             Math.floor(Math.random() * (props.quotes.length - 1))

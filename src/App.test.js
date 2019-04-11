@@ -1,4 +1,5 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { expect } from "code";
 import sinon from "sinon";
 import App from "./App";
@@ -7,6 +8,7 @@ import Chance from "chance";
 
 describe("Given App", () => {
   let component;
+  let fetchQuotesSpy;
 
   const chance = new Chance();
 
@@ -35,13 +37,19 @@ describe("Given App", () => {
 
   function requiredProps(overrides = {}) {
     return {
-      filteredQuotes: mockQuotes,
+      quotes: mockQuotes,
+      fetchQuotes: fetchQuotesSpy,
       ...overrides
     };
   }
 
   beforeEach(() => {
+    fetchQuotesSpy = sinon.stub().returns(mockQuotes);
     component = renderComponent();
+  });
+
+  afterEach(() => {
+    sinon.restore();
   });
 
   function renderComponent(props = requiredProps()) {
@@ -59,10 +67,19 @@ describe("Given App", () => {
   });
 
   it("should contain default state", () => {
-    expect(component.state().filteredQuotes).to.equal([]);
     expect(component.state().quotes).to.equal([]);
     expect(component.state().isActive).to.equal("home");
     expect(component.state().doneLoading).to.be.false();
+  });
+
+  it('should update state of "quotes" ', () => {
+    component.setState({ quotes: mockQuotes });
+    expect(component.state().quotes).to.equal(mockQuotes);
+  });
+
+  it('should update state of "doneLoading" ', () => {
+    component.setState({ doneLoading: true });
+    expect(component.state().doneLoading).to.be.true();
   });
 
   describe("Given <Fragment/>", () => {
