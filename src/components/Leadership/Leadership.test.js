@@ -1,26 +1,60 @@
 import React from "react";
 import { expect } from "code";
 import { shallow } from "enzyme";
+import Chance from "chance";
 import Leadership from "./Leadership";
 
-describe("Given Motivational", () => {
+describe("Given Leadership", () => {
   let component;
-
-  function requiredProps(overrides = {}) {
-    return {
-      ...overrides
-    };
-  }
+  const chance = new Chance();
+  const mockQuotes = [
+    {
+      motivation: [
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() }
+      ]
+    },
+    {
+      humor: [
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() }
+      ]
+    },
+    {
+      positive: [
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() }
+      ]
+    },
+    {
+      leadership: [
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() }
+      ]
+    },
+    {
+      wisdom: [
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() }
+      ]
+    }
+  ];
 
   beforeEach(() => {
-    component = renderComponent();
+    component = shallow(<Leadership quotes={mockQuotes} />);
   });
 
-  function renderComponent(props = requiredProps) {
-    return shallow(<Leadership {...props} />);
-  }
-
-  it("should exsit", () => {
+  it("should exist", () => {
     expect(component).to.have.length(1);
   });
 });

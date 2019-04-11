@@ -51,22 +51,11 @@ describe("Given Positive", () => {
     }
   ];
 
-  function requiredProps(overrides = {}) {
-    return {
-      quotes: mockQuotes,
-      ...overrides
-    };
-  }
-
-  function renderComponent(props = requiredProps) {
-    return shallow(<Positive {...props} />);
-  }
-
   beforeEach(() => {
-    component = renderComponent();
+    component = shallow(<Positive quotes={mockQuotes} />);
   });
 
   it("should exist", () => {
-    expect(component.find("div")).to.have.length(1);
+    expect(component.find("div")).to.have.length(2);
   });
 });
