@@ -5,7 +5,9 @@ import PropTypes from "prop-types";
 const Motivational = props => {
   return (
     <div className={props.className}>
-      <h1>Motivational Quotes</h1>
+      <h1>
+        Motivational <span>Quotes</span>{" "}
+      </h1>
 
       <div className="quote-container">
         {

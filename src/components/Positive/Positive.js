@@ -5,7 +5,9 @@ import PropTypes from "prop-types";
 const Positive = props => {
   return (
     <div className={props.className}>
-      <h1>Positive Quotes</h1>
+      <h1>
+        Positive <span>Quotes</span>
+      </h1>
 
       <div className="quote-container">
         {

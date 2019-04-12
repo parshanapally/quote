@@ -18,6 +18,11 @@
   font-size: 50px;
 }
 
+.motivationalLink h1 span {
+  color: #1b35cc;
+  font-size: 50px;
+}
+
 .motivationalLink .quote-container {
   color: #1b35cc;
   font-size: 20px;
