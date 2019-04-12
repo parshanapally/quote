@@ -6,7 +6,7 @@ const Leadership = props => {
   return (
     <div className={props.className}>
       <p>Leadership Quotes</p>
-      <div>
+      <div className="quote-container">
         {
           props.quotes[3].leadership[
             Math.floor(Math.random() * (props.quotes.length - 1))

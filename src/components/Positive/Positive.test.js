@@ -1,26 +1,66 @@
 import React from "react";
 import { expect } from "code";
 import { shallow } from "enzyme";
+import Chance from "chance";
 import Positive from "./Positive";
 
-describe("Given Motivational", () => {
+describe("Given Positive", () => {
   let component;
 
-  function requiredProps(overrides = {}) {
-    return {
-      ...overrides
-    };
-  }
+  const chance = new Chance();
+  const mockQuotes = [
+    {
+      motivation: [
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() }
+      ]
+    },
+    {
+      humor: [
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() }
+      ]
+    },
+    {
+      positive: [
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() }
+      ]
+    },
+    {
+      leadership: [
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() }
+      ]
+    },
+    {
+      wisdom: [
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() },
+        { quote: chance.string() }
+      ]
+    }
+  ];
 
   beforeEach(() => {
-    component = renderComponent();
+    component = shallow(<Positive quotes={mockQuotes} />);
   });
 
-  function renderComponent(props = requiredProps) {
-    return shallow(<Positive {...props} />);
-  }
+  it("should exist", () => {
+    expect(component.find("div")).to.have.length(2);
+  });
 
-  it("should exsit", () => {
-    expect(component).to.have.length(1);
+  it("should contain className with quote-container", () => {
+    const quoteContainer = component.find("div.quote-container");
+    expect(quoteContainer).to.have.length(1);
   });
 });
