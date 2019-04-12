@@ -1,3 +1,7 @@
+body {
+  background-color: #cbd2fd;
+}
+
 .motivationalDiv {
   cursor: pointer;
   padding: 10px;
@@ -5,6 +9,14 @@
   padding-left: 100px;
   border: 1px solid #091b80;
   background-color: #1b35cc;
+
+  background-image: linear-gradient(
+    to right,
+    #091b80,
+    #1b35cc,
+    #2142ff,
+    #2131ff
+  );
 }
 
 .humorDiv {
@@ -14,6 +26,14 @@
   padding-left: 100px;
   border: 1px solid #091b80;
   background-color: #1b35cc;
+
+  background-image: linear-gradient(
+    to right,
+    #091b80,
+    #1b35cc,
+    #2142ff,
+    #2131ff
+  );
 }
 
 .positiveDiv {
@@ -23,6 +43,14 @@
   padding-left: 100px;
   border: 1px solid #091b80;
   background-color: #1b35cc;
+
+  background-image: linear-gradient(
+    to right,
+    #091b80,
+    #1b35cc,
+    #2142ff,
+    #2131ff
+  );
 }
 
 .leadershipDiv {
@@ -32,6 +60,14 @@
   padding-left: 100px;
   border: 1px solid #091b80;
   background-color: #1b35cc;
+
+  background-image: linear-gradient(
+    to right,
+    #091b80,
+    #1b35cc,
+    #2142ff,
+    #2131ff
+  );
 }
 
 .homeDiv {
@@ -41,6 +77,14 @@
   padding-left: 100px;
   border: 1px solid #091b80;
   background-color: #1b35cc;
+  background-image: linear-gradient(
+    to right,
+    #091b80,
+    #1b35cc,
+    #2142ff,
+    #2131ff
+  );
+  border-radius: 20px 20px 0 0;
 }
 
 .wisdomDiv {
@@ -50,6 +94,14 @@
   padding-left: 100px;
   border: 1px solid #091b80;
   background-color: #1b35cc;
+  background-image: linear-gradient(
+    to right,
+    #091b80,
+    #1b35cc,
+    #2142ff,
+    #2131ff
+  );
+  border-radius: 0 0 20px 20px;
 }
 .tab-container {
   display: flex;

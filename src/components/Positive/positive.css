@@ -1,13 +1,28 @@
 .positiveLink {
   text-decoration: none;
   color: black;
-  padding: 3px;
   display: none;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .positiveLink.active {
   color: var(--black);
-  padding-bottom: 10px;
   display: block;
+  padding: 6px;
+}
+
+.positiveLink h1 {
+  color: #5469e3;
+  font-size: 50px;
+}
+
+.positiveLink h1 span {
+  color: #1b35cc;
+  font-size: 50px;
+}
+
+.positiveLink .quote-container {
+  color: #1b35cc;
+  font-size: 20px;
 }

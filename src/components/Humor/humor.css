@@ -1,13 +1,28 @@
 .humorLink {
   text-decoration: none;
   color: black;
-  padding: 3px;
   display: none;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .humorLink.active {
   color: var(--black);
-  padding-bottom: 10px;
   display: block;
+  padding: 6px;
+}
+
+.humorLink h1 {
+  color: #5469e3;
+  font-size: 50px;
+}
+
+.humorLink h1 span {
+  color: #1b35cc;
+  font-size: 50px;
+}
+
+.humorLink .quote-container {
+  color: #1b35cc;
+  font-size: 20px;
 }

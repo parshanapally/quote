@@ -5,7 +5,9 @@ import PropTypes from "prop-types";
 const Wisdom = props => {
   return (
     <div className={props.className}>
-      <p>Wisdom Quotes</p>
+      <h1>
+        Wisdom <span>Quotes</span>
+      </h1>
 
       <div className="quote-container">
         {

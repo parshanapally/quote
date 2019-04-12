@@ -1,13 +1,28 @@
 .leadershipLink {
   text-decoration: none;
   color: black;
-  padding: 3px;
   display: none;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .leadershipLink.active {
   color: var(--black);
-  padding-bottom: 10px;
   display: block;
+  padding: 6px;
+}
+
+.leadershipLink h1 {
+  color: #5469e3;
+  font-size: 50px;
+}
+
+.leadershipLink h1 span {
+  color: #1b35cc;
+  font-size: 50px;
+}
+
+.leadershipLink .quote-container {
+  color: #1b35cc;
+  font-size: 20px;
 }
