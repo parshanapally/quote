@@ -16,7 +16,7 @@ class App extends Component {
     doneLoading: false
   };
   componentDidMount() {
-    fetchQuotes().then(res => {
+    return fetchQuotes().then(res => {
       this.setState({
         quotes: res,
         doneLoading: true

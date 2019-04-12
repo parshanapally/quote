@@ -5,6 +5,7 @@ import sinon from "sinon";
 import App from "./App";
 import { shallow } from "enzyme";
 import Chance from "chance";
+import { fetchQuotes } from "./services/fetchQuotes";
 
 describe("Given App", () => {
   let component;
@@ -44,8 +45,9 @@ describe("Given App", () => {
   }
 
   beforeEach(() => {
-    fetchQuotesSpy = sinon.stub().returns(mockQuotes);
     component = renderComponent();
+    fetchQuotesSpy = sinon.stub().resolves(mockQuotes);
+    fetchQuotes = fetchQuotesSpy;
   });
 
   afterEach(() => {
@@ -73,11 +75,17 @@ describe("Given App", () => {
   });
 
   it('should update state of "quotes" ', () => {
-    component.setState({ quotes: mockQuotes });
-    expect(component.state().quotes).to.equal(mockQuotes);
+    component
+      .instance()
+      .componentDidMount()
+      .then(() => {
+        component.update();
+        expect(component.state().quotes).to.equal(mockQuotes);
+      });
   });
 
   it('should update state of "doneLoading" ', () => {
+    expect(component.state().doneLoading).to.be.false();
     component.setState({ doneLoading: true });
     expect(component.state().doneLoading).to.be.true();
   });
@@ -111,82 +119,81 @@ describe("Given App", () => {
     const Tabs = component.find("Tabs");
     expect(Tabs).to.have.length(1);
   });
-  describe("Given handleClick", () => {
-    it("should call <Home/> when isActive state is equal to home", () => {
-      const event = {
-        target: {
-          className: "homeDiv"
-        }
-      };
 
-      component.instance().handleClick(event);
-      component.setState({ isActive: "home" });
+  it("should call <Home/> when isActive state is equal to home", () => {
+    const event = {
+      target: {
+        className: "homeDiv"
+      }
+    };
 
-      expect(component.state().isActive).to.equal("home");
-    });
-    it("should call <Motivational/> when isActive state is equal to motivational", () => {
-      const event = {
-        target: {
-          className: "motivationalDiv"
-        }
-      };
+    component.instance().handleClick(event);
+    component.setState({ isActive: "home" });
 
-      component.instance().handleClick(event);
-      component.setState({ isActive: "motivational" });
+    expect(component.state().isActive).to.equal("home");
+  });
+  it("should call <Motivational/> when isActive state is equal to motivational", () => {
+    const event = {
+      target: {
+        className: "motivationalDiv"
+      }
+    };
 
-      expect(component.state().isActive).to.equal("motivational");
-    });
+    component.instance().handleClick(event);
+    component.setState({ isActive: "motivational" });
 
-    it("should call <Humor/> when isActive state is equal to humor", () => {
-      const event = {
-        target: {
-          className: "humorDiv"
-        }
-      };
+    expect(component.state().isActive).to.equal("motivational");
+  });
 
-      component.instance().handleClick(event);
-      component.setState({ isActive: "humor" });
+  it("should call <Humor/> when isActive state is equal to humor", () => {
+    const event = {
+      target: {
+        className: "humorDiv"
+      }
+    };
 
-      expect(component.state().isActive).to.equal("humor");
-    });
+    component.instance().handleClick(event);
+    component.setState({ isActive: "humor" });
 
-    it("should call <Positive/> when isActive state is equal to positive", () => {
-      const event = {
-        target: {
-          className: "positiveDiv"
-        }
-      };
+    expect(component.state().isActive).to.equal("humor");
+  });
 
-      component.instance().handleClick(event);
-      component.setState({ isActive: "positive" });
+  it("should call <Positive/> when isActive state is equal to positive", () => {
+    const event = {
+      target: {
+        className: "positiveDiv"
+      }
+    };
 
-      expect(component.state().isActive).to.equal("positive");
-    });
+    component.instance().handleClick(event);
+    component.setState({ isActive: "positive" });
 
-    it("should call <Leadership/> when isActive state is equal to leadership", () => {
-      const event = {
-        target: {
-          className: "leadershipDiv"
-        }
-      };
+    expect(component.state().isActive).to.equal("positive");
+  });
 
-      component.instance().handleClick(event);
-      component.setState({ isActive: "leadership" });
+  it("should call <Leadership/> when isActive state is equal to leadership", () => {
+    const event = {
+      target: {
+        className: "leadershipDiv"
+      }
+    };
 
-      expect(component.state().isActive).to.equal("leadership");
-    });
+    component.instance().handleClick(event);
+    component.setState({ isActive: "leadership" });
 
-    it("should call <Wisdom/> when isActive state is equal to wisdom", () => {
-      const event = {
-        target: {
-          className: "wisdomDiv"
-        }
-      };
+    expect(component.state().isActive).to.equal("leadership");
+  });
 
-      component.instance().handleClick(event);
-      component.setState({ isActive: "wisdom" });
+  it("should call <Wisdom/> when isActive state is equal to wisdom", () => {
+    const event = {
+      target: {
+        className: "wisdomDiv"
+      }
+    };
 
-      expect(component.state().isActive).to.equal("wisdom");
-    });
+    component.instance().handleClick(event);
+    component.setState({ isActive: "wisdom" });
+
+    expect(component.state().isActive).to.equal("wisdom");
   });
 });
