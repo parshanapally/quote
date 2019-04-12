@@ -4,10 +4,21 @@
   padding: 3px;
   display: none;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .motivationalLink.active {
   color: var(--black);
   padding-bottom: 10px;
   display: block;
+}
+
+.motivationalLink h1 {
+  color: #5469e3;
+  font-size: 50px;
+}
+
+.motivationalLink .quote-container {
+  color: #1b35cc;
+  font-size: 20px;
 }

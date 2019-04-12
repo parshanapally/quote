@@ -4,10 +4,25 @@
   padding: 3px;
   display: none;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .homeLink.active {
   color: var(--black);
   padding-bottom: 10px;
   display: block;
+}
+
+.homeLink h1 {
+  color: #5469e3;
+  font-size: 50px;
+}
+
+.homeLink p {
+  color: #1b35cc;
+  font-size: 20px;
+}
+
+.homeLink span {
+  color: #1b35cc;
 }

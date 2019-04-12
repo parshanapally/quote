@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const Leadership = props => {
   return (
     <div className={props.className}>
-      <p>Leadership Quotes</p>
+      <h1>Leadership Quotes</h1>
       <div className="quote-container">
         {
           props.quotes[3].leadership[

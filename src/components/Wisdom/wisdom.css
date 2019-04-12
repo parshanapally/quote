@@ -4,10 +4,21 @@
   padding: 3px;
   display: none;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .wisdomLink.active {
   color: var(--black);
   padding-bottom: 10px;
   display: block;
+}
+
+.wisdomLink h1 {
+  color: #5469e3;
+  font-size: 50px;
+}
+
+.wisdomLink .quote-container {
+  color: #1b35cc;
+  font-size: 20px;
 }
