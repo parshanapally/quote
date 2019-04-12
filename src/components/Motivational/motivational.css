@@ -9,6 +9,7 @@
 .motivationalLink.active {
   color: var(--black);
   display: block;
+  padding: 6px;
 }
 
 .motivationalLink h1 {

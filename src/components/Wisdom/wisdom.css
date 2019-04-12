@@ -9,6 +9,7 @@
 .wisdomLink.active {
   color: var(--black);
   display: block;
+  padding: 6px;
 }
 
 .wisdomLink h1 {

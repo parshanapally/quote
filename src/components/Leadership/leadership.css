@@ -9,6 +9,7 @@
 .leadershipLink.active {
   color: var(--black);
   display: block;
+  padding: 6px;
 }
 
 .leadershipLink h1 {

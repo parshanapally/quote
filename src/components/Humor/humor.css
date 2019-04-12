@@ -9,6 +9,7 @@
 .humorLink.active {
   color: var(--black);
   display: block;
+  padding: 6px;
 }
 
 .humorLink h1 {
