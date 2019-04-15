@@ -26,3 +26,9 @@
   color: #1b35cc;
   font-size: 20px;
 }
+
+@media (min-width: 768px) {
+  .wisdomLink .quote-container {
+    padding: 0 200px;
+  }
+}
