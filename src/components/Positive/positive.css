@@ -25,4 +25,11 @@
 .positiveLink .quote-container {
   color: #1b35cc;
   font-size: 20px;
+  padding: 0 200px;
+}
+
+@media (min-width: 768px) {
+  .positiveLink .quote-container {
+    padding: 0 200px;
+  }
 }
