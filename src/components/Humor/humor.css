@@ -28,8 +28,8 @@
   padding: 0 200px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 320px) {
   .humorLink .quote-container {
-    padding: 0 200px;
+    padding: 0;
   }
 }
